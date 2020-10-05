@@ -1,0 +1,14 @@
+def largestNum(str: Array[String]): String = {
+  var lis:List[(String,String)] = List()
+  var string = ""
+  var arr = str.sorted
+  var len = arr(arr.length-1).length
+  for(i <- str){
+    val q = i * len
+    lis = (q.substring(0,len),i) :: lis
+  }
+  for(i <- lis.sorted.reverse)
+    string = string + i._2
+
+  string
+  }
